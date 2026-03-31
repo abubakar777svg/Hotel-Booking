@@ -14,6 +14,7 @@ app.use(clerkMiddleware());
 const port = process.env.PORT || 3000;
 app.use("/api/clerk", clerkWebhooks);
 app.use("/api/user", userRouter);
+app.get("/", (req, res) => res.send("Hello World"));
 connectDb();
 app.listen(port, () => {
   console.log(`Your app listening on port ${port}`);
